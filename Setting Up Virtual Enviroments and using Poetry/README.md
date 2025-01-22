@@ -68,6 +68,8 @@ An **absolute path** specifies the full path starting from the root of the file 
 <code>pip install virtualenv</code>
 <code>pip install poetry</code>
 
+**If any problem comes while installing poetry on windows you can check this gist: https://gist.github.com/Isfhan/b8b104c8095d8475eb377230300de9b0**
+
 **`virtualenv`** is a Python package used to create and activate isolated virtual environments. Additionally, the **Poetry** package also relies on `virtualenv` to create and manage its virtual environments, ensuring efficient dependency isolation and project management.
 
 After installing virtualenv globally we need to run this command inside vs code's terminal:
