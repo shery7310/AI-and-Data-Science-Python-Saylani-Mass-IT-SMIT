@@ -188,17 +188,17 @@ Now to run a fast api server in virtualenv or poetry environment we need to past
 ```python3
 from fastapi import FastAPI
 
-    # Create an instance of the FastAPI class
-    app = FastAPI()
+# Create an instance of the FastAPI class
+app = FastAPI()
 
-    # Define a root route
-    @app.get("/")
-    async def read_root():
-        return {"message": "hello, world!"}
+# Define a root route
+@app.get("/")
+async def read_root():
+    return {"message": "hello, world!"}
 
-    if __name__ == "__main__":
-        import uvicorn
-        uvicorn.run(app, host="127.0.0.1", port=8000)
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="127.0.0.1", port=8000)
 ```
 
 To simply run this code for fast api we need to run this command in IDE's terminal:
