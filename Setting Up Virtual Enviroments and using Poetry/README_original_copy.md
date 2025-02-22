@@ -1,6 +1,5 @@
 This is a guide to help you install poetry and virtual environment which is required for poetry to run on any system. For the Windows portion of this guide to work you need to activate Scripts using windows Powershell and use Windows Powershell. You also need to globally install poetry and venv in your system. We will discuss these steps in detail below.
 
-You can download and install latest version of Powershell from [here](https://github.com/powershell/powershell/releases), make sure you select the correct version i.e. `x64`, `msi` or `exe` which ever you prefer. 
 # What is a virtual environment in Python?
 
 ### What is a package and what are package managers?
@@ -25,6 +24,8 @@ Let's say we want to use an older version of fastapi as it can be a project requ
 
 If we select version 0.113 and click on it PyPi will suggest us to run this command: <code>pip install fastapi==0.113.0</code>
 # How to create a virtual environment? 
+
+### Windows Operating System
 
 #### Activating Scripts on Windows PowerShell
 
@@ -105,51 +106,17 @@ This is what we will see in the terminal:
 
 ### Mac/Linux Based Operating Systems
 
-#### How to create and activate a virtual environment on Mac/Linux? Using virtualenv package
+#### How to create and activate a virtual environment on Mac/Linux?
 
-The commands for setting up a virtual environment using virtualenv package are pretty much the same for Mac/Linux.
-
-First we need to globally install virtualenv and poetry package on our Linux distro, just open terminal and then paste these and press enter:
-
-<code>pip install virtualenv</code>
-<code>pip install poetry</code>
-
-##### Then to create and activate a virtualenv on Linux/Mac we can type:
-
-<code>python -m venv env-name</code>
-
-Let's say i run this:
-
-<code>python -m venv venv</code>
-
-Now when we run the above command we will see that a new folder called venv will be created this folder contains files we need to activate the environment, we must be in root/python project directory and we need to run:
-
-<code>source venv/bin/activate</code>
-
-For Fish Shell this command is a bit different:
-
-<code>. venv/bin/activate.fish</code>
-
-Now when the environment will be activated we will see the name of the environment at start of the path being shown in terminal. i.e.
-
-Packages can be installed/uninstalled just by using:
-
-<pre>
-pip install numpy
-
-pip uninstall numpy
-</pre>
-
-![](https://i.imgur.com/M1pHEL7.png)
 # How to create a poetry virtual environment? 
 
 ### Windows Operating System
 
-Since Our instructor suggested that we use Poetry for creating and using virtual environments let's see how to create and activate virtual environments using poetry. Poetry needs virtualenv package as a dependency so make sure to <code>pip install virtualenv</code> before trying to use poetry package. 
+Since Our instructor suggest that we use Poetry for creating and using virtual environments let's see how to create and activate virtual environments using poetry. Poetry needs virtualenv package as a dependency so make sure to <code>pip install virtualenv</code> before trying to use poetry package. 
+
 #### Create and Activate a poetry environment
 
-We need to run this command:
-<code>poetry new name-of-environment</code>
+We need to run <code>poetry new name-of-environment</code>
 
 You can replace **`name-of-environment`** with any name you wish to assign to your Poetry environment. In the context of Poetry, the environment's folder is referred to as a **Poetry project**, while in the context of a virtual environment, it is simply called an **environment**.
 
@@ -157,7 +124,7 @@ Let's say i run this:
 
 <code>poetry new poetry-env</code>
 
-As soon as we run this command we will see that a folder called `poetry-env` will be created and this directory is the folder of the virtual environment we have created using poetry.
+As soon as we run this command we will see that a folder called poetry-env will be created and this directory is the folder of the virtual environment we have created using poetry.
 
 ![](https://i.imgur.com/egQs4bu.png)
 
@@ -169,49 +136,21 @@ You can check the default cache path for your system using this command:
 
 <code>poetry config --list</code>
 
-This means that all your environments will be stored in a separate directory, distinct from the directory we our project exists. You can either leave it as is or configure Poetry to always move environment files into the root directory of your Python projects. The second approach is preferable.
+This means that all your environments will be stored in a separate directory, distinct from the root directory we created. You can either leave it as is or configure Poetry to always move environment files into the root directory of your Python projects. The second approach is preferable.
 
 Here's how to set poetry to always move environment files into root directory, just run:
 
 <code>poetry config virtualenvs.in-project true</code>
 
-If we `cd` into the folder of our environment i.e. poetry-env in this case we will see a structure like this:
+Now to activate the environment make sure you have already changed directory to the correct one, meaning your IDE terminal must point to the poetry environment folder i.e. poetry-env in our case, if you are however in the root directory for some reason you can change directory using `cd` command. 
 
-![](https://i.imgur.com/DUSPK0b.png)
+To activate command we need to run (assuming you are in root directory):
 
-Make sure your IDE terminal is in the environment folder i.e. 
-
-`poetry-env`. After we are in a path like this: Documents/Fastapi/Connecting FastAPI with Mongodb/poetry-env
-
-We need to run `poetry install` command to create further environment files so we can later activate the environment. 
-
-Now if we see the structure/directories present in our environment folder we can see something like:
-
-![](https://i.imgur.com/w86sd4S.png)
-
-Here we can see that when we ran `poetry install` a folder called .venv was created, it is very similar to to how a virtualenv works as it also places environment activation files in the environment folder. 
-
-To activate environment we can again go 1 step back using `cd ..` our goal here is to be in the root directory or the python project directory. The path shown in IDE's terminal should be like:
-
-`/Documents/Fastapi/Connecting FastAPI with Mongodb`
-
-See that we our outside the environment folder now. To activate from here we can run:
-
-<code>./poetry-env/.venv/bin/Scripts/activate</code>
+<code>.venv/Scripts/activate.ps1</code>
 
 ![](https://i.imgur.com/5t0h2Fp.png)
 
 If you are not in root directory you will need to set correct directory. 
-
-### Linux/Mac OS
-
-The commands to create a poetry environment are similar Windows and Linux Based Operating Systems such as GNU Linux and Mac OS. The only difference is how we activate a poetry environment i.e.
-
-<code>source poetry-env/.venv/bin/activate</code>
-
-For Fish Shell:
-
-<code>source poetry-env/.venv/bin/activate.fish</code>
 
 #### Installing Packages onto poetry environment and checking their versions
 
