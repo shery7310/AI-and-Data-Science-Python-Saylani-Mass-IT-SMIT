@@ -114,6 +114,11 @@ First we need to globally install virtualenv and poetry package on our Linux dis
 <code>pip install virtualenv</code>
 <code>pip install poetry</code>
 
+Note: On some Linux Distributions we might need to run this to install Poetry:
+<pre>
+    curl -sSL https://install.python-poetry.org | python3 -
+</pre>
+
 ##### Then to create and activate a virtualenv on Linux/Mac we can type:
 
 <code>python -m venv env-name</code>
