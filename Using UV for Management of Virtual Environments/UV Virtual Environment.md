@@ -109,7 +109,12 @@ UV assumes that by default we might want to create a `main.py` file because gene
 ###### `pyproject.toml` File
 
 Typically these are the contents inside a `pyproject.toml` file: 
+
+
 ![](https://i.ibb.co/3YW3bRbs/image.png)
+
+
+
 
 On line 7 we can dependencies these are the packages a uv virtual environment might have. It's empty because haven't installed any packages, but if we add any packages the are added to dependencies list. 
 
