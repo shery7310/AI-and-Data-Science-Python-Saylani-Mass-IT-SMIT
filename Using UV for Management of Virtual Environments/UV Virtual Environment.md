@@ -109,12 +109,7 @@ UV assumes that by default we might want to create a `main.py` file because gene
 ###### `pyproject.toml` File
 
 Typically these are the contents inside a `pyproject.toml` file: 
-
-
 ![](https://i.ibb.co/3YW3bRbs/image.png)
-
-
-
 
 On line 7 we can dependencies these are the packages a uv virtual environment might have. It's empty because haven't installed any packages, but if we add any packages the are added to dependencies list. 
 
@@ -149,7 +144,9 @@ Now whenever we open a project with any IDE i.e. Vs Code or Pycharm they will au
 #### Seeing Which Packages need which smaller packages or dependencies using tree
 
 We can also see sub dependencies in uv using `uv tree`.
+### If we want to create a virtual environment without adding packages we can simply run
 
+<pre> uv venv </pre>
 ### Uv handles virtual environments for us
 
 As mentioned before UV automatically creates a `.venv` folder to establish and manage your Python environment, and you can specify custom names for environments as needed. If your virtual environment folder gets deleted or you're working with a freshly cloned repository without an existing `.venv` folder, UV seamlessly handles the situation. When you run `uv run something.py`, UV intelligently detects the missing environment and creates a new `.venv` folder on the fly, then rapidly installs all required packages based on your `pyproject.toml` configuration.
