@@ -6,4 +6,4 @@ First Run:
 uv add chainlit dotenv openai openai-agents
 </pre>
 
-Then run `uv run basic_chainlit_connection.py`, it will load the app on: `http://localhost:8000/`
+Then run `uv run chainlir run basic_chainlit_connection.py -w`, it will load the app on: `http://localhost:8000/`
