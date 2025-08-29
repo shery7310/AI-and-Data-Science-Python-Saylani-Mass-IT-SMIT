@@ -21,7 +21,7 @@ async def stream_gemini():
         model= gemini_model,
         messages=[
             {"role": "system", "content": "You are a math assitant."},
-            {"role": "user", "content": "Solve this quadratic euqation step wise x^2 - 3x - 4 = 0"}
+            {"role": "user", "content": "Solve this quadratic equation step wise x^2 - 3x - 4 = 0"}
         ],
         stream=True,
     )
