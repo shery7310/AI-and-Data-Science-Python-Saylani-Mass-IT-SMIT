@@ -1,3 +1,9 @@
+## What are Agents
+
+Agents in essence are Large Language Models that accomplish a specific task.
+
+Agents can be supplemented with tools, structured outputs and can hand-off to the other agents. 
+
 ## Agentic Architecture
 
 AI Agents are programs where **LLM outputs** control the **workflow**. 
@@ -26,10 +32,56 @@ Decomposing problem into fix sub-tasks.
 
 ![Prompt Chaining Diagram](https://raw.githubusercontent.com/shery7310/AI-and-Data-Science-Python-Saylani-Mass-IT-SMIT/main/Agents%20and%20Workflows/Prompt%20Chaining%20Diagram.png)
 
-
-
-Output of LLM1 is going to a Gate which could be a custom code which is optional, then based on some condition it could 
+Output of LLM1 is going to a Gate which could be a **our** custom code which is optional, then based on some condition it could 
 go to LLM2 and then LLM2's output could go to LLM3.
+
+Or 
+
+In other words we are chaining a series of fixed LLM calls decomposing into a fixed set of subtasks, then through each process we can set a guardrail (to ensure best outputs by LLMs) and do stuff. 
+
+Here we can see that LLMs are somewhat driving their own processes so there is some autonomous stuff going on. 
+
+##### 2. Routing
+
+Direct and input into a specialized sub-task, ensuring separation of concerns
+
+![](https://i.ibb.co/bgHbNQzZ/image.png)
+
+Here the Router(orchestrator/triage LLM) will decide which of the 3 LLMs is best for a task and assign them the task as required. Different llms can have different expertise and usages.
+
+Here the router is making decision so this means there is a lot of autonomy, and instead of relying on code we are relying on Router's decision, but since it still has to follow a given workflow this is why anthropic has labelled it as a given workflow.
+
+##### 3. Parallelization
+
+Breaking down tasks and running multiple sub-tasks concurrently. 
+
+![](https://i.ibb.co/cSKBfJds/image.png)
+
+Here the coordinator is our code deciding how to coordinate and how to assign code to LLMs, instead of an LLM orchestrating, and it can be sent in parallel to 3 or more LLMs to carry out 3 different activities and then the aggregator (which is again our code) concurrently takes the results from LLMs and concatenates a result for example a dictionary or some meaningful result. 
+
+Anthropic suggests that we might even be giving the same task to three different LLMs for various reasons and let's aggregate the result and compare or use them later. 
+
+##### 4. Orchestrator Worker
+
+Challenging tasks are broken down and recombined.
+
+![](https://i.ibb.co/Z6hTmJfR/image.png)
+
+These seems same as the previous one but here our written code is not doing orchestration instead an LLMs is doing that. 
+
+Essentially the model is breaking down a complex task into simpler tasks, then handing off to LLMs and then another LLM is combining the results. 
+
+Again it won't be a good approach to categorize this a workflow as it seems more like an agent pattern. 
+
+##### 5. Evaluator Optimizer
+
+LLM output is validated by another.
+
+![](https://i.ibb.co/0pn1fXvk/image.png)
+
+Here we are using LLM as a judge (as openai agents documentation suggests). Let's say an LLm generates an output, the LLM Evaluator will check the output and reject it or keep it based on some condition which again is autonomous in this case and when the Evaluator LLM is satisfied only then the output will be accepted and shown to user. The LLM Evaluator can give feedback to LLM Generator aswell that this is what I am looking for, output this. 
+
+This is a powerful way to increase accuracy of LLMs and it is mostly used, it is an effective pattern. 
 
 ### Agents
 
