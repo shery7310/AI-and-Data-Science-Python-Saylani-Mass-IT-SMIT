@@ -31,3 +31,7 @@ messages = {{"role": "user", "content", "What is 2+2?"}}
 ```
 
 We've seen even LLMs internally saving data like this. 
+
+LLMs just love responding in markdowns so sometimes it's better to include this prompt at the end of user prompts:
+
+Now respond this way do not include markdown format, do not include code blocks.
