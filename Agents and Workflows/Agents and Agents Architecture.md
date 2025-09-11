@@ -23,7 +23,9 @@ Workflows are systems where LLMs and tools ar orchestrated through predefined co
 
 Decomposing problem into fix sub-tasks.
 
-![[Prompt Chaining Diagram.png]]
+
+![Prompt Chaining Diagram](Agents%20and%20Workflows/Prompt%20Chaining%20Diagram.png)
+
 
 Output of LLM1 is going to a Gate which could be a custom code which is optional, then based on some condition it could 
 go to LLM2 and then LLM2's output could go to LLM3.
