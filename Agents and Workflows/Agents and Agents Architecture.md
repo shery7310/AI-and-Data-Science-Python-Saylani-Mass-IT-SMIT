@@ -83,6 +83,44 @@ Here we are using LLM as a judge (as openai agents documentation suggests). Let'
 
 This is a powerful way to increase accuracy of LLMs and it is mostly used, it is an effective pattern. 
 
-### Agents
-
 Agents are systems where LLMs dynamically direct their own processes and tool usage, maintaining control over how they accomplish tasks. 
+
+Agents in comparison to workflows are:
+
+Agents have feedback loops they are designed in a way that allows information to comeback and be processed multiple times. 
+
+Unlike workflows agents don't have a fixed path or series of steps that needed to be followed, it's fluid but is more autonomous.
+
+So such a system can lack things like guardrails, robustness and whether this fixes user's problems or not. 
+
+We are to ensure best practices and usages to get the best out such a system. 
+
+![](https://i.ibb.co/MDMB7zVn/image.png)
+
+This is a very abstract diagram but it's saying the human inputs something to the LLM based on that the LLM performs an action on an environment for example another computer, and then after performing or confirming the task the LLM then brings back some feedback from the environment. 
+
+This in comparison to work flows is way more fluid where LLMs can basically plot their own paths, but this can have many other issues.
+
+Such as how long the agent will take to complete a task or it will even complete it's task at all, what kind of quality we are getting since there are no guardrails, how many tokens are being used (LLM api providers charge by tokens.
+
+#### Risk of Agent Frameworks
+
+##### Paths are unpredictable
+
+We don't know which order tasks will take place or even what tasks will happen.
+
+##### Unpredictable Output
+
+We can't predict the output since we don't know about the which order the tasks are happening, also no guarantee that output's gonna be good or even reasonable. 
+
+Yes we are giving LLMs autonomy but it's not always a good approach. 
+
+##### Unpredictable Costs
+
+We have no idea how long it might take to solve a problem, so we don't know how much we will be charged for API usage. 
+
+##### Ways to Deal with these uncertainties
+
+One of the ways we can deal with this is by monitoring what's going on in each LLM call when using both agentic/workflow design patterns by using concepts such as tracing and using Guardrails. 
+
+Guardrails ensure your agents behave safely, consistently and within your intended boundaries.
