@@ -1,0 +1,22 @@
+{
+    "Dec to Feb": {
+        "months": ["Dec", "Jan", "Feb"],
+        "Peak Timing": "7 PM to 11 PM",
+        "Off-Peak Timing": "Remaining 20 hours"
+    },
+    "Mar to May": {
+        "months": ["Mar", "Apr", "May"],
+        "Peak Timing": "8 PM to 12 PM",
+        "Off-Peak Timing": "Remaining 20 hours"
+    },
+    "Jun to Aug": {
+        "months": ["Jun", "Jul", "Aug"],
+        "Peak Timing": "7 PM to 11 PM",
+        "Off-Peak Timing": "Remaining 20 hours"
+    },
+    "Sep to Nov": {
+        "months": ["Sep", "Oct", "Nov"],
+        "Peak Timing": "9 PM to 1 AM",
+        "Off-Peak Timing": "Remaining 20 hours"
+    }
+}
