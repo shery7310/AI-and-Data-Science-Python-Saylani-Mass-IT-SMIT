@@ -397,3 +397,6 @@ Then Select Body and pass a sample todo i.e.
 }
 ```
 
+#### Package Dependencies:
+
+uv add fastapi>=0.116.1 dotenv>=0.9.9 pymongo>=4.15.0 uvicorn>=0.35.0
