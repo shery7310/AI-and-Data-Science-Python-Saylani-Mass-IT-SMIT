@@ -1,0 +1,31 @@
+<!-- 📄 templates/todos.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todos for {{ user_id }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>🗑️ Delete Todos for User: {{ user_id }}</h1>
+
+    {% if todos|length > 0 %}
+        <ul id="todos-list">
+            {% for todo in todos %}
+                <li class="todo-item" data-task-id="{{ todo.taskId }}">
+                    <strong>{{ todo.title }}</strong>
+                    <span>Status: {{ "✅ Done" if todo.completed else "⏳ Pending" }}</span>
+                    <button onclick="deleteTodo({{ todo.taskId }})">🗑️ Delete</button>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>📭 No todos found for this user.</p>
+    {% endif %}
+
+    <script>
+        const USER_ID = "{{ user_id }}";
+    </script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
